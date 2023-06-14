@@ -27,3 +27,4 @@
 // Cypress.Commands.overwrite('log', (subject, options) => {
 //     // Disable logging by not doing anything
 // });
+

@@ -9,6 +9,9 @@ describe('Opening of new tab in Cypress', () => {
 
     it('Open new tab - Approach2', () => {
         cy.contains('Course Link').invoke("attr", "target", "_self").click()
+
     })
+
+
 
 })
