@@ -9,7 +9,6 @@ describe('Find broken links on the page', () => {
             if (href) {
                 cy.request({ url: href, failOnStatusCode: false }).then((response) => {
                     if (response.status >= 400) {
-
                         cy.log(`**** link  ${index + 1} is Broken Link *** ${href} `)
                         brokenLinks++
                     }

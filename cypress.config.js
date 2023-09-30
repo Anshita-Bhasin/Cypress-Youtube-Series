@@ -2,6 +2,8 @@ const { defineConfig } = require("cypress");
 
 module.exports = defineConfig({
   e2e: {
+
+    baseUrl: "https://naveenautomationlabs.com/opencart/index.php?route=account/login",
     setupNodeEvents(on, config) {
 
       /*  on('before:browser:launch', (browser = {}, launchOptions) => {
@@ -20,6 +22,10 @@ module.exports = defineConfig({
   
   */
     },
+    // "proxyServer": false,
+    chromeWebSecurity: false,
+
+
   },
 
 

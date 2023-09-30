@@ -9,6 +9,7 @@
   "author": "Anshita Bhasin ",
   "license": "ISC",
   "devDependencies": {
-    "cypress": "^12.9.0"
+    "@faker-js/faker": "^8.1.0",
+    "cypress": "13.0"
   }
 }

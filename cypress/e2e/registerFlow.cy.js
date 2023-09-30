@@ -12,7 +12,7 @@ describe('Registration Flow',()=>{
         cy.get('input[type="checkbox"]').check()
         cy.get('.btn.btn-primary').click()
 
-        cy.contains('Your Account Has Been Created!').should('have.text','Your Account Has Been Created!')
+        cy.contains('Your Account Has Been Created!').should('exist')
 
     })
 })

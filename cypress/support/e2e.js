@@ -15,6 +15,11 @@
 
 // Import commands.js using ES2015 syntax:
 import './commands'
+import './login'
+
+
+
+
 
 // Alternatively you can use CommonJS syntax:
 // require('./commands')
@@ -29,11 +34,24 @@ if (!app.document.head.querySelector("[data-hide-command-log-request]")) {
     app.document.head.appendChild(style);
 }
 
-Cypress.on("uncaught:exception", (e, runnable) => {
-    console.log("error", e);
-    console.log("runnable", runnable);
-    if (e.message.includes("Things went bad")) {
-        return false;
+// Cypress.on('uncaught:exception', (err, runnable) => {
+//     // we expect a 3rd party library error with message 'list not defined'
+//     // and don't want to fail the test so we return false
+//     if (err.message.includes('list not defined') && err.message.includes('  > Error: read ECONNRESET')
+//     ) {
+//         return false
+//     }
+//     // we still want to ensure there are no other unexpected
+//     // errors, so we let them fail the test
+// })
+
+Cypress.on('uncaught:exception', (err, runnable) => {
+    if (err.message.includes('ECONNRESET')) {
+        cy.log(`**** Network issue occurred: ${err.message}`);
+        brokenLinks++;
+        return false; // Pass the exception as uncaught
     }
 });
+
+
 
