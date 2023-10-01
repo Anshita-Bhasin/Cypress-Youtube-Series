@@ -4,12 +4,13 @@
   "description": "test automation",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test1": "echo \"Error: no test specified\" && exit 1",
+    "test": "npx cypress run -- record --key 6a44b284-02f1-4a6a-bdd5-03b237527dac"
   },
   "author": "Anshita Bhasin ",
   "license": "ISC",
   "devDependencies": {
     "@faker-js/faker": "^8.1.0",
-    "cypress": "13.0"
+    "cypress": "13.2"
   }
 }
