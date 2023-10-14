@@ -28,3 +28,11 @@
 //     // Disable logging by not doing anything
 // });
 
+Cypress.Commands.add('loginBasicAuth', () => {
+    cy.visit('https://authenticationtest.com/HTTPAuth/', {
+        auth: {
+            username: 'user',
+            password: 'pass'
+        }
+    })
+})
